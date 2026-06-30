@@ -8,12 +8,8 @@ const Projects = () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    const reveals = entry.target.querySelectorAll('.reveal-section');
-                    reveals.forEach(el => el.classList.add('is-visible'));
                 } else {
                     entry.target.classList.remove('is-visible');
-                    const reveals = entry.target.querySelectorAll('.reveal-section');
-                    reveals.forEach(el => el.classList.remove('is-visible'));
                 }
             });
         }, { threshold: 0.1 });
@@ -35,6 +31,14 @@ const Projects = () => {
             live: ""    
         },
         {
+            title: "Network Security Analytics",
+            desc: "AI-powered real-time network monitoring platform built with Spring Boot, React, and Apache Kafka. Detects SQL Injections and DDoS attacks while providing AI-assisted remediation.",
+            metrics: ["📡 LIVE PACKET MONITORING", "🤖 AI SECOPS COPILOT"],
+            tags: ["Java 17", "Spring Boot", "Kafka", "Pcap4J", "React", "Ollama"],
+            github: "https://github.com/priyamshrivastava/network-security-analytics", 
+            live: ""    
+        },
+        {
             title: "EventNexus AI",
             desc: "Shipped a cloud-native event management platform with AI-driven scheduling and automated attendee coordination. Implemented dual-layer Email OTP authentication and leveraged Neon PostgreSQL.",
             metrics: ["🔒 DUAL-LAYER AUTH", "🤖 AI AUTOMATION"],
@@ -48,14 +52,6 @@ const Projects = () => {
             metrics: ["🏛️ LAYERED ARCHITECTURE", "⚙️ RESTful APIs"],
             tags: ["Java", "Spring Boot", "Spring Data JPA", "H2 Database"],
             github: "https://github.com/priyamshrivastava/ecom-springboot", 
-            live: "" 
-        },
-        {
-            title: "CSAT Campaign Builder",
-            desc: "A React-based CSAT Campaign Builder that allows users to configure customer feedback popups and preview them in real time using a live mobile mockup with dynamic add/delete options.",
-            metrics: ["📱 MOBILE PREVIEW", "🎨 REAL-TIME UPDATES"],
-            tags: ["React.js", "JavaScript", "Vite", "CSS"],
-            github: "https://github.com/priyamshrivastava/csat-campaign-builder", 
             live: "" 
         },
         {
@@ -85,44 +81,44 @@ const Projects = () => {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-20">
                     {projectList.map((proj, idx) => (
-                        <div key={idx} className="spidey-card stark-hud p-8 flex flex-col relative spider-sense-pulse">
+                        <div key={idx} className="spidey-card bg-surface border-2 border-border p-8 flex flex-col relative">
                             {/* Comic panel corners */}
-                            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary z-20"></div>
-                            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary z-20"></div>
-                            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary z-20"></div>
-                            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary z-20"></div>
+                            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+                            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
+                            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
+                            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
                             
-                            <h3 className="font-display text-3xl font-bold mb-3 text-white uppercase tracking-wide relative z-10">{proj.title}</h3>
-                            <p className="font-sans text-textMuted text-sm mb-6 flex-grow relative z-10">{proj.desc}</p>
+                            <h3 className="font-display text-3xl font-bold mb-3 text-white uppercase tracking-wide">{proj.title}</h3>
+                            <p className="font-sans text-textMuted text-sm mb-6 flex-grow">{proj.desc}</p>
                             
                             {/* Impact Metrics - Comic style badges */}
-                            <div className="flex flex-wrap gap-3 mb-6 relative z-10">
+                            <div className="flex flex-wrap gap-3 mb-6">
                                 {proj.metrics.map((metric, mIdx) => (
-                                    <span key={mIdx} className="font-display text-accent text-sm tracking-wider bg-accent/10 px-3 py-1 border border-accent/30 skew-x-[-10deg] shadow-[2px_2px_0_0_#F59E0B]">
+                                    <span key={mIdx} className="font-display text-accent text-sm tracking-wider bg-accent/10 px-3 py-1 border border-accent/30 skew-x-[-10deg]">
                                         <span className="inline-block skew-x-[10deg]">{metric}</span>
                                     </span>
                                 ))}
                             </div>
 
                             {/* Tech Stack Pills */}
-                            <div className="flex flex-wrap gap-2 mb-8 relative z-10">
+                            <div className="flex flex-wrap gap-2 mb-8">
                                 {proj.tags.map((tag, tIdx) => (
-                                    <span key={tIdx} className="font-mono text-xs bg-[#050505] border border-border px-3 py-1 text-textMuted hover:text-white transition-colors cursor-default">
+                                    <span key={tIdx} className="font-mono text-xs bg-[#050505] border border-border px-3 py-1 text-textMuted">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
                             
                             {/* Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-4 mt-auto relative z-10">
+                            <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                                 {proj.github && (
-                                    <a href={proj.github} target="_blank" rel="noopener noreferrer" className="thwip-btn flex-1 bg-[#050505] border border-primary hover:border-white text-white font-display tracking-widest text-lg py-3 px-4 flex items-center justify-center gap-2 transition-all">
-                                        <span><i className="fab fa-github"></i> SOURCE</span>
+                                    <a href={proj.github} target="_blank" rel="noopener noreferrer" className="flex-1 bg-surface border border-primary hover:bg-primary text-white font-display tracking-widest text-lg py-2 px-4 flex items-center justify-center gap-2 transition-all">
+                                        <i className="fab fa-github"></i> SOURCE
                                     </a>
                                 )}
                                 {proj.live && (
-                                    <a href={proj.live} target="_blank" rel="noopener noreferrer" className="thwip-btn flex-1 bg-secondary border border-secondary hover:border-white text-white font-display tracking-widest text-lg py-3 px-4 flex items-center justify-center gap-2 transition-all">
-                                        <span><i className="fas fa-external-link-alt"></i> LIVE DEMO</span>
+                                    <a href={proj.live} target="_blank" rel="noopener noreferrer" className="flex-1 bg-secondary hover:bg-blue-600 text-white font-display tracking-widest text-lg py-2 px-4 flex items-center justify-center gap-2 transition-all">
+                                        <i className="fas fa-external-link-alt"></i> LIVE DEMO
                                     </a>
                                 )}
                             </div>
