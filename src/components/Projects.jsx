@@ -27,7 +27,7 @@ const Projects = () => {
             desc: "Built a full-stack AI observability platform streaming real-time CPU, JVM, and infrastructure telemetry. Engineered an incident simulation engine and integrated OpenRouter AI for live root-cause analysis.",
             metrics: ["⚡ 30% FASTER DIAGNOSIS", "🔬 40% LESS INVESTIGATION"],
             tags: ["Java 21", "Spring Boot", "React", "Docker", "AWS EC2"],
-            github: "https://github.com/priyamshrivastava/VortexOps", 
+            github: "https://github.com/priyamshrivastava/vortexops-telemetry-suite",
             live: ""    
         },
         {
